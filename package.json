@@ -1,0 +1,36 @@
+{
+	"name": "krbase-ksef-generator",
+	"version": "1.1.48",
+	"description": "Server-side PDF rendering of KSeF FA(3) invoices and UPO, trimmed from CIRFMF/ksef-pdf-generator",
+	"license": "MIT",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"files": [
+		"dist",
+		"LICENSE"
+	],
+	"upstream": {
+		"repository": "https://github.com/CIRFMF/ksef-pdf-generator",
+		"commit": "d766b7b79486ed401cd40fac27402ffecd672bd7"
+	},
+	"scripts": {
+		"sync": "bun scripts/sync.ts",
+		"check": "tsc --noEmit",
+		"build": "bun scripts/build.ts",
+		"test": "bun test"
+	},
+	"devDependencies": {
+		"@types/bun": "latest",
+		"@types/pdfmake": "^0.3.2",
+		"pdfmake": "0.3.11",
+		"typescript": "^5.8.3",
+		"xml-js": "^1.6.11"
+	}
+}
